@@ -1,0 +1,107 @@
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-md-3">
+      <app-sidenavbar></app-sidenavbar>
+    </div>
+    <div class="col-md-9">
+      <div class="task-list-container">
+        <!-- Create Task Button -->
+        <button class="create-task-btn" routerLink="/app-create-task">Create Task</button>
+      
+        <!-- Header with Back button and Task List heading -->
+        <div class="header">
+          <button class="bt" routerLink="/app-layout">Home</button>
+          <h2>Task List</h2>
+        </div>
+      
+        <!-- Filters -->
+        <div class="filters">
+          <label for="status">Filter by Status:</label>
+          <select id="status" [(ngModel)]="filterStatus" (change)="applyFilters()">
+            <option value="">All</option>
+            <option value="todo">To-do</option>
+            <option value="in-progress">In Progress</option>
+            <option value="completed">Completed</option>
+          </select>
+      
+          <label for="priority">Filter by Priority:</label>
+          <select id="priority" [(ngModel)]="filterPriority" (change)="applyFilters()">
+            <option value="">All</option>
+            <option value="low">Low</option>
+            <option value="medium">Medium</option>
+            <option value="high">High</option>
+          </select>
+      
+          <label for="category">Filter by Category:</label>
+          <select id="category" [(ngModel)]="filterCategory" (change)="applyFilters()">
+            <option value="">All</option>
+            <option value="work">Work</option>
+            <option value="personal">Personal</option>
+            <option value="other">Other</option>
+          </select>
+      
+          <button (click)="resetFilters()">Reset Filters</button>
+        </div>
+      
+        <!-- Task cards container -->
+        <div class="task-list">
+          <div *ngFor="let task of filteredTasks; let i = index" class="task-item">
+            <h3>{{ task.title }}</h3>
+            <p>Description: {{ task.description }}</p>
+            <p>Due Date: {{ task.dueDate }}</p>
+            <p>Priority: {{ task.priority }}</p>
+            <p>Status: {{ task.status }}</p>
+            <p>Category: {{ task.category }}</p>
+      
+            <!-- Buttons for edit and delete -->
+            <div class="buttons">
+              <button (click)="openEditModal(i, task)" class="bg-warning">Edit</button>
+              <button (click)="deleteTask(i)" class="bg-danger">Delete</button>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <!-- Edit Task Modal (popup) -->
+      <div *ngIf="isEditModalOpen" class="modal-overlay">
+        <div class="modal-content">
+          <form (ngSubmit)="updateTask()">
+            <h3>Edit Task</h3>
+            <label for="title">Title:</label>
+            <input id="title" [(ngModel)]="editedTask.title" name="title" required />
+      
+            <label for="description">Description:</label>
+            <textarea id="description" [(ngModel)]="editedTask.description" name="description"></textarea>
+      
+            <label for="dueDate">Due Date:</label>
+            <input id="dueDate" type="date" [(ngModel)]="editedTask.dueDate" name="dueDate" />
+      
+            <label for="priority">Priority:</label>
+            <select id="priority" [(ngModel)]="editedTask.priority" name="priority">
+              <option value="low">Low</option>
+              <option value="medium">Medium</option>
+              <option value="high">High</option>
+            </select>
+      
+            <label for="status">Status:</label>
+            <select id="status" [(ngModel)]="editedTask.status" name="status">
+              <option value="todo">To-do</option>
+              <option value="in-progress">In Progress</option>
+              <option value="completed">Completed</option>
+            </select>
+      
+            <label for="category">Category:</label>
+            <select id="category" [(ngModel)]="editedTask.category" name="category">
+              <option value="work">Work</option>
+              <option value="personal">Personal</option>
+              <option value="other">Other</option>
+            </select>
+      
+            <button type="submit">Update Task</button>
+            <button type="button" (click)="cancelEdit()">Cancel</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

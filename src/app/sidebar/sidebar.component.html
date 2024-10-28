@@ -1,0 +1,69 @@
+<div class="sidebar-container vh-100">
+  <!-- Search Bar, Notification, and Profile Picture (same row) -->
+  <div class="top-section d-flex justify-content-between align-items-center p-2">
+    <input type="text" class="search-bar" placeholder="Search...">
+    
+    <!-- Notification Button with Badge -->
+    <button class="notification-btn position-relative" (click)="onNotificationClick()" routerLink="/app-notification">
+      <i class="fa fa-bell"></i> <!-- Notification Icon -->
+      <!-- Notification Badge -->
+      <span *ngIf="notificationCount > 0" class="badge position-absolute top-0 start-100 translate-middle bg-danger">
+        {{ notificationCount }}
+      </span>
+    </button>
+    
+    <div class="profile-container">
+      <div class="profile-pic" (click)="toggleProfileDropdown($event)">
+        <i class="fa fa-user-circle"></i> <!-- Profile Icon -->
+      </div>
+      <div class="profile-dropdown" *ngIf="showProfileDropdown">
+        <div class="profile-info">
+          <i class="fa fa-user-circle"></i>
+          <h4>{{ adminName }}</h4>
+          <p>{{ adminEmail }}</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Create Task Section -->
+  <div class="create-task p-2">
+    <button routerLink="/app-create-task" class="create-task-btn btn btn-primary w-100 d-flex justify-content-between align-items-center bg-black text-white">
+      <div class="text-start">
+        <strong>Create Task</strong><br>
+        <span>Create a new task</span>
+      </div>
+      <i class="fa-regular fa-square-plus" style="color:white; font-size: 44px;"></i> 
+    </button>
+  </div>
+
+  <!-- Calendar with Date -->
+  <div class="calendar-section p-2">
+    <app-calendar></app-calendar>
+  </div>
+
+  <!-- Meeting Cards Section -->
+  <div class="meetings-section p-2">
+    <!-- Meeting Card 1 -->
+    <div class="meeting-card mb-2 p-3">
+      <h3>Daily Standup Call</h3>
+      <p class="meeting-time">10:00 AM</p>
+      <div class="icons-container d-flex">
+        <i class="fa fa-user-circle me-1"></i>
+        <i class="fa fa-user-circle me-1"></i>
+        <i class="fa fa-user-circle me-1"></i>
+        <i class="fa fa-user-circle"></i>
+      </div>
+      <div class="checkbox-container d-flex mt-2">
+        <label class="checkbox-label tick-checkbox me-3">
+          <input type="checkbox" class="checkbox tick-checkbox">
+          <i class="fa fa-check"></i> 
+        </label>
+        <label class="checkbox-label cross-checkbox">
+          <input type="checkbox" class="checkbox cross-checkbox">
+          <i class="fa fa-times"></i> 
+        </label>
+      </div>
+    </div>
+</div>
+</div>

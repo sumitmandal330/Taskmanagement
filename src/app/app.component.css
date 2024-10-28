@@ -1,0 +1,20 @@
+/* Example adjustments */
+.container-fluid {
+  padding: 0; /* Remove extra padding for a cleaner layout */
+}
+
+.vh-100 {
+  min-height: 100vh; /* Ensures full height */
+}
+
+.bg-dark, .bg-secondary, .bg-light {
+  padding: 20px; /* Add some padding for better spacing */
+}
+
+
+@media (max-width: 767px) {
+  /* Adjustments for small screens, if needed */
+  .vh-100 {
+    min-height: auto;
+  }
+}

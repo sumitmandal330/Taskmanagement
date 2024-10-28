@@ -1,0 +1,38 @@
+<div class="container-fluid">
+  <div class="row">
+    <!-- Sidebar on the left -->
+    <div class="col-md-3">
+      <app-sidenavbar></app-sidenavbar>
+    </div>
+
+    <!-- Notifications on the right -->
+    <div class="col-md-9">
+      <div class="notification-container">
+        <!-- Back button aligned to the top right corner -->
+        <button class="back-button" routerLink="/app-layout">Home</button>
+        
+        <!-- Notification Header -->
+        <h3 class="notification-header">Task Notifications</h3>
+        
+        <!-- Notification List -->
+        <div class="notification-list">
+          <ng-container *ngIf="taskNotifications.length > 0; else noNotifications">
+            <div
+              *ngFor="let notification of taskNotifications.slice().reverse(); let i = index"
+              [ngClass]="{'latest-card': i === 0}" 
+              class="notification-card"
+            >
+              <h4>Title: {{ notification.title }}</h4>
+              <p>Submitted on {{ notification.submissionTime }}</p> 
+            </div>
+          </ng-container>
+        </div>
+        
+        <!-- Template for no notifications -->
+        <ng-template #noNotifications>
+          <p class="no-notifications">No task notifications yet.</p>
+        </ng-template>
+      </div>
+    </div>
+  </div>
+</div>

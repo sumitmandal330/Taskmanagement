@@ -1,0 +1,64 @@
+/* Ensure the container takes up the full height of the viewport */
+.container-fluid {
+    height: 100vh; /* Full viewport height */
+    padding: 0; /* Remove default padding */
+  }
+  
+  /* Row should take full width */
+  .row {
+    height: 100%; /* Full height */
+    margin: 0; /* Remove default margin */
+  }
+  
+  /* Sidebar styling */
+  .col-md-3 {
+    padding: 0; /* Remove padding */
+  }
+  
+  /* Ensure the sidenavbar is fixed on the left */
+  app-sidenavbar {
+    position: fixed; /* Fix position */
+    top: 0; /* Align to the top */
+    left: 0; /* Align to the left */
+    height: 100vh; /* Full viewport height */
+    width: 250px; /* Fixed width for the sidebar */
+    z-index: 1000; /* Make sure it stays on top */
+  }
+  
+  /* Centerbar styling */
+  .col-md-9 {
+    margin-left: 250px; /* Leave space for the sidebar */
+    padding: 1rem; /* Add some padding around content */
+    height: 100vh; /* Full viewport height */
+    overflow-y: auto; /* Allow scrolling if content overflows */
+    position: relative; /* Ensure proper positioning for the button */
+  }
+  
+  /* Centerbar styling */
+  app-centerbar {
+    width: 100%; /* Full width of the content area */
+    max-width: 1200px; /* Adjust the maximum width as needed */
+    height: auto; /* Auto height based on content */
+    margin: 0 auto; /* Center align horizontally */
+    padding: 1rem; /* Add padding inside the centerbar */
+    box-sizing: border-box; /* Include padding and border in the element's total width and height */
+  }
+  
+  /* Home button styling */
+  .home-button {
+    position: absolute; /* Absolute positioning */
+    top: 1rem; /* Space from the top */
+    right: 1rem; /* Space from the right */
+    background-color: #007bff; /* Button background color */
+    color: #fff; /* Button text color */
+    border: none; /* Remove border */
+    border-radius: 4px; /* Rounded corners */
+    padding: 0.5rem 1rem; /* Button padding */
+    cursor: pointer; /* Pointer cursor on hover */
+    z-index: 1001; /* Ensure button is on top */
+  }
+  
+  .home-button:hover {
+    background-color: #0056b3; /* Darker background on hover */
+  }
+  

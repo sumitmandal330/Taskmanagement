@@ -1,0 +1,211 @@
+/* Sidebar Container */
+.sidebar-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  background-color: white;
+  color: black;
+  width: 100%;
+  height: 100vh; /* Full viewport height */
+  padding: 10px;
+  box-sizing: border-box;
+}
+
+.top-section {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+/* Reduced search bar size */
+.search-bar {
+  flex-grow: 1;
+  padding: 5px;
+  font-size: 0.9rem;
+  width: 85%; /* Reduced width */
+  margin-right: 5px;
+}
+
+/* Reduced notification badge size */
+.notification-btn {
+  position: relative;
+  background: none;
+  border: none;
+  color: black;
+  font-size: 1.5rem;
+  cursor: pointer;
+}
+
+.notification-btn .badge {
+  font-size: 0.75rem; /* Reduced font size */
+  padding: 2px 5px; /* Reduced padding */
+  border-radius: 50%; /* Ensures the badge remains round */
+}
+
+.profile-container {
+  position: relative;
+}
+
+.profile-pic {
+  font-size: 1.5rem;
+  color: black;
+  cursor: pointer;
+}
+
+.profile-dropdown {
+  position: absolute;
+  top: 100%;
+  right: 0;
+  background-color: white;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  padding: 10px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  z-index: 1000;
+}
+
+.profile-info {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.profile-info i {
+  font-size: 4rem;
+}
+
+.profile-pic-large {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  margin-bottom: 10px;
+}
+
+.create-task-btn {
+  background-color: black;
+  color: white;
+  font-size: 0.9rem;
+  padding: 8px;
+  margin-bottom: 10px;
+  border-radius: 10px; /* Add border radius for the button */
+}
+
+.create-task-btn i {
+  font-size: 20px;
+}
+
+.meetings-section {
+  margin-top: 10px;
+}
+
+.meeting-card {
+  background-color: #495057;
+  display: flex;
+  flex-direction: column;
+  padding: 10px;
+  border-radius: 18px; /* Ensure border radius is applied */
+  position: relative;
+  height: 100px;
+  margin-bottom: 10px;
+  overflow: hidden;
+}
+
+.meeting-card h3 {
+  font-size: 18px;
+  margin: 0;
+}
+
+.meeting-time {
+  position: absolute;
+  right: 10px;
+  top: 10px;
+  font-size: 14px;
+  font-weight: bold;
+}
+
+.icons-container {
+  display: flex;
+  justify-content: flex-start;
+  margin-top: 5px;
+}
+
+.icons-container i {
+  font-size: 1.5rem;
+  color: white;
+  margin-right: -15px; /* Adjust for overlap */
+  z-index: 1; /* Ensure proper stacking */
+}
+
+/* Optional: Increase overlap more */
+.icons-container i:nth-child(2) {
+  margin-left: -10px;
+  z-index: 2; /* Ensure second icon stacks above first */
+}
+
+.icons-container i:nth-child(3) {
+  margin-left: -10px;
+  z-index: 3; /* Ensure third icon stacks above second */
+}
+
+.icons-container i:nth-child(4) {
+  margin-left: -10px;
+  z-index: 4; /* Ensure fourth icon stacks above others */
+}
+
+.checkbox-container {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 5px;
+}
+
+.checkbox-label {
+  position: relative;
+  width: 20px;
+  height: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: black;
+  border-radius: 4px;
+}
+
+.checkbox-label i {
+  font-size: 1rem;
+  color: white;
+}
+
+/* Hide the default checkbox input */
+.checkbox {
+  display: none;
+}
+
+/* Calendar Section */
+.calendar-section {
+  margin-top: 10px;
+}
+
+/* Mobile Responsiveness */
+@media (max-width: 767px) {
+  .sidebar-container {
+    padding: 5px;
+  }
+
+  .search-bar {
+    width: 100%;
+    margin-right: 0;
+  }
+
+  .top-section {
+    flex-direction: column;
+    gap: 5px;
+  }
+
+  .notification-btn, .profile-pic {
+    margin-top: 5px;
+  }
+
+  .create-task-btn {
+    font-size: 0.8rem;
+  }
+}

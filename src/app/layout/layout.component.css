@@ -1,0 +1,28 @@
+/* Adjust vh to auto for scrolling on small screens */
+nav, main, aside {
+  height: auto;
+}
+
+/* Mobile view - Stack components vertically */
+@media (max-width: 767px) {
+  .row {
+    flex-direction: column;
+  }
+
+  nav, main, aside {
+    height: auto;
+    width: 100%;
+  }
+
+  /* Ensure no overlapping by resetting z-index */
+  nav, main, aside {
+    position: relative;
+    z-index: auto;
+  }
+}
+
+/* No gutters to remove extra space */
+.no-gutters {
+  margin-right: 0;
+  margin-left: 0;
+}

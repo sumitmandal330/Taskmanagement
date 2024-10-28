@@ -1,0 +1,30 @@
+<div class="sidebar d-flex flex-column vh-100 p-3">
+  <h4 class="mb-4 mt-4 text-center text-white">Menu</h4>
+  <ul class="nav nav-pills flex-column mb-auto text-center">
+    <li class="nav-item mb-4">
+      <a routerLink="/app-dashboard" routerLinkActive="active" class="nav-link text-white">
+        <i class="bi bi-house-door-fill"></i>
+        Dashboard
+      </a>
+    </li>
+    <li class="nav-item mb-4">
+      <a routerLink="/app-show-task" routerLinkActive="active" class="nav-link text-white">
+        <i class="bi bi-check2-square"></i>
+        Tasks
+      </a>
+    </li>
+    <li class="nav-item mb-4">
+      <a routerLink="/app-notification" routerLinkActive="active" class="nav-link text-white">
+        <i class="bi bi-envelope-fill"></i>
+        Inbox
+      </a>
+    </li>
+  </ul>
+  <hr class="border-light">
+  <div>
+    <a routerLink="/app-login" routerLinkActive="active" class="nav-link text-white text-center" (click)="logout()">
+      <i class="bi bi-box-arrow-right"></i>
+      Logout
+    </a>
+  </div>
+</div>

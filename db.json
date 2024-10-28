@@ -1,0 +1,32 @@
+{
+    "tasks": [
+      {
+        "id": 1,
+        "title": "Initial Task",
+        "description": "This is your first task",
+        "dueDate": "2024-09-05",
+        "priority": "High",
+        "status": "To-Do",
+        "category": "Work"
+      }
+    ],
+    "categories": [
+      {
+        "id": 1,
+        "name": "Work"
+      },
+      {
+        "id": 2,
+        "name": "Personal"
+      }
+    ],
+    "users": [
+      {
+        "id": 1,
+        "username": "sumit",
+        "password": "12345",
+        "token": "fake-jwt-token"
+      }
+    ]
+  }
+  

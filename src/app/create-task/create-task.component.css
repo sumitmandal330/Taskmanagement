@@ -1,0 +1,161 @@
+*,
+*:before,
+*:after {
+  box-sizing: border-box;
+}
+
+body {
+  padding: 1em;
+  font-family: "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-size: 15px;
+  color: #b9b9b9;
+  background-color: #e3e3e3;
+  height: 100vh; /* Ensure the body takes the full viewport height */
+  margin: 0;
+  display: flex;
+  justify-content: center; /* Horizontally center the container */
+  align-items: center;     /* Vertically center the container */
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 1em;
+  background-color: #fff;
+  border-radius: 4.2px;
+  box-shadow: 0px 3px 10px -2px rgba(0, 0, 0, 0.2);
+}
+
+.create-task-form {
+  position: relative;
+  width: 100%;
+  max-width: 600px; /* Set a max-width for the form */
+  padding: 2em;
+  border-radius: 8px;
+  background-color: #fff;
+  box-shadow: 0px 3px 10px -2px rgba(0, 0, 0, 0.2);
+}
+
+h2.create {
+  text-align: center;
+  color: #f0a500;
+}
+
+.back-button {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  background-color: #6c757d;
+  color: white;
+  border: none;
+  padding: 0.5rem 1rem;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.back-button:hover {
+  background-color: #5a6268;
+}
+
+/* Input, textarea, and select are smaller */
+input,
+textarea,
+select {
+  width: 100%;
+  padding: 0.75em; /* Reduced padding to make input fields smaller */
+  line-height: 1.2;
+  background-color: #f9f9f9;
+  border: 1px solid #e5e5e5;
+  border-radius: 3px;
+  transition: 0.35s ease-in-out;
+  color: #f0a500;
+}
+
+input:focus,
+textarea:focus,
+select:focus {
+  outline: 0;
+  border-color: #bd8200;
+}
+
+textarea {
+  resize: vertical;
+  height: 50px; /* Smaller height for textarea */
+}
+
+button[type="submit"] {
+  background-color: #f0a500;
+  color: white;
+  border: none;
+  padding: 1em;
+  border-radius: 3px;
+  cursor: pointer;
+  transition: background-color 0.35s ease-in-out;
+  display: block;
+  margin: 1em auto; /* Centering the button */
+}
+
+button[type="submit"]:hover {
+  background-color: #bd8200;
+}
+
+.input-group {
+  margin-bottom: 1em;
+}
+
+.input-group-icon {
+  position: relative;
+}
+
+.input-group-icon input {
+  padding-left: 4.4em;
+}
+
+.input-group-icon .input-icon {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 3.4em;
+  height: 3.4em;
+  line-height: 3.4em;
+  text-align: center;
+  pointer-events: none;
+}
+
+/* Error message style - red color */
+small {
+  color: red;
+  font-size: 0.875em;
+}
+
+@media only screen and (max-width: 540px) {
+  .col-half {
+    width: 100%;
+    padding-right: 0;
+  }
+}
+.container-fluid {
+  height: 100vh; /* Full viewport height */
+  padding: 0; /* Remove default padding */
+}
+
+/* Row should take full width */
+.row {
+  height: 100%; /* Full height */
+  margin: 0; /* Remove default margin */
+}
+
+/* Sidebar styling */
+.col-md-3 {
+  padding: 0; /* Remove padding */
+}
+
+/* Ensure the sidenavbar is fixed on the left */
+app-sidenavbar {
+  position: fixed; /* Fix position */
+  top: 0; /* Align to the top */
+  left: 0; /* Align to the left */
+  height: 100vh; /* Full viewport height */
+  width: 250px; /* Fixed width for the sidebar */
+  z-index: 1000; /* Make sure it stays on top */
+}

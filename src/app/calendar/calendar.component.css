@@ -1,0 +1,67 @@
+/* Calendar Container */
+.calendar-container {
+    width: 100%;
+    max-width: 300px;
+    margin: 0 auto;
+    font-family: Arial, sans-serif;
+  }
+  
+  .calendar-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    background-color: transparent; /* No background color */
+    color: black; /* Black color for text */
+  }
+  
+  .calendar-header button {
+    background: none;
+    border: none;
+    font-size: 1.5rem;
+    cursor: pointer;
+  }
+  
+  .calendar-header h2 {
+    margin: 0;
+    font-size: 1.2rem;
+  }
+  
+  .calendar {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    gap: 0;
+    background-color: transparent; /* No background color */
+  }
+  
+  .day-label, .day {
+    text-align: center;
+    padding: 5px;
+    font-size: 1rem;
+    color: black; /* Black color for text */
+  }
+  
+  .day-label {
+    font-weight: bold;
+  }
+  
+  .day {
+    cursor: pointer;
+    border: none; /* No border */
+  }
+  
+  .day.today {
+    background-color: black; /* Black background for today's date */
+    color: white; /* White color for text */
+  }
+  
+  .day.selected {
+    background-color: green; /* Light grey background for selected date */
+    color: black; /* Black color for text */
+  }
+  
+  /* Remove hover effect */
+  .day:hover {
+    background-color: none; /* No background change on hover */
+  }
+  

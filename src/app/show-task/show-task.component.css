@@ -1,0 +1,238 @@
+/* Main container for the task list and header */
+.task-list-container {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  padding: 1rem;
+  position: relative; /* Allows absolute positioning of the button inside */
+}
+
+/* Create Task button styling */
+.create-task-btn {
+  background-color: #28a745; /* Green color */
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  padding: 0.5rem 1rem;
+  cursor: pointer;
+  position: absolute; /* Position absolute for top-left alignment */
+  top: 1rem;
+  left: 1rem; /* Align to the top left corner */
+  z-index: 1001; /* Make sure it stays on top of other content */
+}
+
+.create-task-btn:hover {
+  background-color: #218838; /* Darker green on hover */
+}
+
+/* Header styling */
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  margin-bottom: 1rem;
+}
+
+/* Back button styling */
+.bt {
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  padding: 0.5rem 1rem;
+  cursor: pointer;
+  position: absolute; /* Position absolute for right alignment */
+  top: 1rem;
+  right: 5rem; /* Align to the top right corner */
+}
+
+.bt:hover {
+  background-color: #0056b3;
+}
+
+/* Center the Task List heading */
+.header h2 {
+  margin: 0;
+  text-align: center;
+  flex-grow: 1; /* Allows heading to occupy the remaining space */
+}
+
+/* Filters */
+.filters {
+  margin-bottom: 1rem;
+}
+
+/* Task list container (flexible card grid) */
+.task-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+  width: 100%;
+}
+
+/* Style for each task item (card) */
+.task-item {
+  background-color: #f9f9f9;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 1rem;
+  width: calc(25% - 1rem); /* Four cards per row with spacing */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  min-width: 250px; /* Ensures a minimum size for smaller screens */
+  max-width: 800px; /* Restricting the maximum width */
+  position: relative;
+  transition: transform 0.3s ease;
+  text-align: center; /* Center card content */
+}
+
+.task-item:hover {
+  transform: translateY(-5px);
+}
+
+/* Buttons container inside the task card */
+.buttons {
+  display: flex;
+  justify-content: center;
+  gap: 0.5rem;
+  margin-top: 1rem;
+}
+
+/* Modal form styling */
+.modal-content {
+  width: 90%;
+  max-width: 400px;
+  max-height: 500px;
+  padding: 1rem;
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  overflow-y: auto;
+}
+
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+/* Edit form inside modal */
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  width: 100%;
+}
+
+/* Priority and other fields styling */
+form div {
+  display: flex;
+  flex-direction: column;
+}
+
+form label {
+  font-weight: bold;
+}
+
+form input,
+form textarea,
+form select {
+  padding: 0.5rem;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  font-size: 1rem;
+}
+
+form textarea {
+  resize: vertical;
+}
+
+/* Style for buttons */
+button {
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  padding: 0.5rem 1rem;
+  cursor: pointer;
+  margin-right: 10px;
+  transition: background-color 0.3s ease;
+}
+
+button:hover {
+  background-color: #0056b3;
+}
+
+button[type="button"] {
+  background-color: #6c757d;
+}
+
+button[type="button"]:hover {
+  background-color: #5a6268;
+}
+
+button[type="submit"] {
+  background-color: #28a745;
+}
+
+button[type="submit"]:hover {
+  background-color: #218838;
+}
+
+/* Ensure proper layout for smaller screens */
+@media (max-width: 768px) {
+  .task-item {
+    width: calc(50% - 1rem); /* Two cards per row on smaller screens */
+  }
+
+  .modal-content {
+    width: 90%;
+    max-width: 350px; /* Further reduce max-width for smaller screens */
+    max-height: 400px; /* Further reduce height for smaller screens */
+  }
+}
+
+@media (max-width: 576px) {
+  .task-item {
+    width: 100%; /* One card per row on small screens */
+  }
+
+  .modal-content {
+    width: 90%; /* Maintain responsiveness */
+    max-width: 300px; /* Further reduce max-width on very small screens */
+    max-height: 350px; /* Further reduce height for very small screens */
+  }
+}
+
+.container-fluid {
+  height: 100vh; /* Full viewport height */
+  padding: 0; /* Remove default padding */
+}
+
+/* Row should take full width */
+.row {
+  height: 100%; /* Full height */
+  margin: 0; /* Remove default margin */
+}
+
+/* Sidebar styling */
+.col-md-3 {
+  padding: 0; /* Remove padding */
+}
+
+/* Ensure the sidenavbar is fixed on the left */
+app-sidenavbar {
+  position: fixed; /* Fix position */
+  top: 0; /* Align to the top */
+  left: 0; /* Align to the left */
+  height: 100vh; /* Full viewport height */
+  width: 250px; /* Fixed width for the sidebar */
+  z-index: 1000; /* Make sure it stays on top */
+}

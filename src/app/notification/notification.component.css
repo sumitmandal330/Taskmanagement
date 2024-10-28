@@ -1,0 +1,166 @@
+/* Global Reset */
+*,
+*:before,
+*:after {
+  box-sizing: border-box;
+}
+
+/* Body Styles */
+body {
+  margin: 0;
+  padding: 0;
+  font-family: "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  background-color: #e3e3e3;
+}
+
+/* Notification Container */
+.notification-container {
+  padding: 20px;
+  background-color: #f9f9f9;
+  min-height: 100vh;
+  position: relative; /* To position the back button absolutely */
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* Center the content horizontally */
+}
+
+/* Back Button Styling */
+.back-button {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  background-color: #6c757d;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.back-button:hover {
+  background-color: #5a6268;
+}
+
+/* Notification Header Styling */
+.notification-header {
+  font-size: 24px;
+  font-weight: bold;
+  margin-bottom: 20px;
+  color: #333;
+  width: 100%;
+  text-align: center;
+}
+
+/* Notification List Styling */
+.notification-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px;
+  width: 100%;
+  justify-content: center;
+}
+
+/* Notification Card Styling */
+.notification-card {
+  background-color: #fff;
+  padding: 20px; /* Increased padding for better spacing */
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  width: calc(25% - 15px);
+  min-width: 250px; /* Increased min-width for better readability */
+  position: relative; /* For positioning the 'Recent Created' label */
+  overflow: hidden; /* Ensures no content overflows */
+}
+
+/* Lift effect on hover */
+.notification-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+/* Latest Card Styling */
+.latest-card {
+  background-color: #007bff;
+  color: white;
+  position: relative; /* Ensure the label stays in relation to the card */
+}
+
+/* "Recent Created" label inside the latest card, aligned in the top-left corner */
+.latest-card::before {
+  content: 'Recent Created';
+  position: absolute;
+  top: 10px; /* Position just below the top edge */
+  left: 10px; /* Align to the left edge */
+  background-color: #fff;
+  color: #007bff;
+  padding: 5px 10px; /* Adjust padding for visibility */
+  font-size: 12px;
+  font-weight: bold;
+  border-radius: 4px;
+  z-index: 1; /* Ensure it appears above other content */
+}
+
+/* Title Styling */
+.latest-card h4 {
+  margin: 30px 0 0; /* Margin to ensure space below "Recent Created" */
+  font-size: 18px;
+  text-align: center; /* Center the title */
+}
+
+/* Notification Card Paragraph */
+.notification-card p {
+  margin: 0;
+  font-size: 14px;
+}
+
+/* No Notifications Message */
+.no-notifications {
+  font-size: 16px;
+  color: #999;
+}
+
+/* Responsive Design for Small Screens */
+@media (max-width: 768px) {
+  .notification-card {
+    width: calc(50% - 15px); /* Two cards per row */
+  }
+}
+
+@media (max-width: 480px) {
+  .notification-card {
+    width: 100%; /* Full width on smaller screens */
+  }
+
+  .back-button {
+    top: 10px;
+    right: 10px;
+    padding: 5px 10px;
+  }
+}
+.container-fluid {
+  height: 100vh; /* Full viewport height */
+  padding: 0; /* Remove default padding */
+}
+
+/* Row should take full width */
+.row {
+  height: 100%; /* Full height */
+  margin: 0; /* Remove default margin */
+}
+
+/* Sidebar styling */
+.col-md-3 {
+  padding: 0; /* Remove padding */
+}
+
+/* Ensure the sidenavbar is fixed on the left */
+app-sidenavbar {
+  position: fixed; /* Fix position */
+  top: 0; /* Align to the top */
+  left: 0; /* Align to the left */
+  height: 100vh; /* Full viewport height */
+  width: 250px; /* Fixed width for the sidebar */
+  z-index: 1000; /* Make sure it stays on top */
+}
+

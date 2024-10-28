@@ -1,0 +1,126 @@
+/* General Sidebar Styles */
+.sidebar {
+  width: 200px;
+  background-color: black;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  overflow: auto;
+  border-radius:1rem; /* Ensure the sidebar content is scrollable */
+}
+
+.sidebar h4 {
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+  text-align: center;
+}
+
+.sidebar a {
+  color: white;
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  padding: 0.5rem 1rem;
+}
+
+.sidebar a:hover, 
+.sidebar a:focus {
+  background-color: #333; /* Change background on hover */
+}
+
+.nav-link {
+  display: flex;
+  align-items: center;
+}
+
+.nav-link i {
+  margin-right: 10px;
+}
+
+/* Active State for All Links */
+.nav-link {
+  background-color: black; /* Default background color */
+  color: white; /* Default text color */
+}
+
+/* Specific Active State for the Current Page Link */
+.nav-link.active {
+  background-color: #007bff; /* Background color for the active link */
+  color: white; /* Text color for the active link */
+}
+
+/* Ensure only the active link has a specific style */
+.nav-link.active {
+  font-weight: bold; /* Make the active link stand out */
+}
+
+/* Media Queries for Responsiveness */
+
+/* For devices with a max width of 768px (tablets) */
+@media (max-width: 768px) {
+  .sidebar {
+    width: 150px; /* Reduce the width of the sidebar */
+  }
+
+  .sidebar h4 {
+    font-size: 1.2rem; /* Reduce header font size */
+  }
+
+  .sidebar a {
+    font-size: 0.9rem; /* Adjust link font size */
+  }
+
+  .sidebar i {
+    font-size: 1rem; /* Adjust icon size */
+  }
+}
+
+/* For devices with a max width of 576px (mobile devices) */
+@media (max-width: 576px) {
+  .sidebar {
+    width: 100px; /* Further reduce sidebar width */
+  }
+
+  .sidebar h4 {
+    font-size: 1rem; /* Adjust header font size */
+  }
+
+  .sidebar a {
+    font-size: 0.8rem; /* Adjust link font size */
+    padding: 0.5rem; /* Adjust padding for smaller screens */
+  }
+
+  .sidebar i {
+    font-size: 0.8rem; /* Adjust icon size */
+  }
+
+  /* Centering items in a smaller sidebar */
+  .sidebar ul.nav-pills {
+    text-align: left;
+  }
+
+  .sidebar a {
+    padding-left: 10px; /* Add some padding for smaller screens */
+  }
+}
+
+/* For very small screens (below 400px) */
+@media (max-width: 400px) {
+  .sidebar {
+    width: 80px; /* Minimal width for the sidebar */
+  }
+
+  .sidebar h4 {
+    font-size: 0.9rem; /* Further reduce header font size */
+  }
+
+  .sidebar a {
+    font-size: 0.7rem; /* Reduce link font size */
+    padding: 0.5rem; /* Maintain padding */
+  }
+
+  .sidebar i {
+    font-size: 0.7rem; /* Reduce icon size */
+  }
+}
